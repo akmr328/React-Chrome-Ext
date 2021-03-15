@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import CreateReminder from './createReminder'
+import useReminders from './useReminder'
+import Timer from './timer'
 
-function App() {
+const App = () => {
+  const [reminders, addReminder, setReminderCompleted] = useReminders() 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="reminder-container">
+        <h2>Your Reminders</h2>
+        <hr />
+        {reminders.map(reminder => (
+          <div key={reminder.id} className="reminder"> 
+          <p>{reminder.label}</p>
+          <p>{reminder.context}</p>
+          <input type="checkbox"
+          checked = {reminder.completed}
+          onChange={() => setReminderCompleted(reminder.id, !reminder.completed)}
+          />
+          </div>
+        ))}
+      </div>
+      <CreateReminder createNewReminder={addReminder}/>
+      <Timer />
+      <div className="text-center">
+      <div>
+ </div>  
+      <button type="button" onClick={() => localStorage.clear()} className="btn btn-primary">Clear All</button>
+    </div>
     </div>
   );
 }

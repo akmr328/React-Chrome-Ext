@@ -1,31 +1,52 @@
 .App {
+  padding: 32px;
+}
+.reminder {
+  display: flex;
+  padding: 8px;
+  margin: 8px;
+  background-color: whitesmoke;
+}
+.reminder p {
+  margin: 0;
+  margin-right: 16px;
+}
+
+label {
+  color: white
+}
+
+
+p,h2,h3 {
+  text-align: center;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+  line-height: 1em; /* a */
+  max-height: 2em
+}
+body {
+  background-color: #1985A1
+}
+button {
+  justify-content: center;
+}
+.reminder-container {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  background-color: #DCDCDD;
+  color: #4C5C68;
+  border-color: #46494C;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+}
+.create-reminder-form {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.create-reminder-form button {
+  margin: 5px;
 }
 
 @keyframes App-logo-spin {

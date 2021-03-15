@@ -1,0 +1,15 @@
+{
+    "name": "What Was I Looking At?",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_popup": "index.html",
+      "default_title": "TodoApp"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "icons": {
+      "128" : "images/finger.png"
+    },
+    "version": "2.0"
+}
